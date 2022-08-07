@@ -1,0 +1,2 @@
+(self.webpackChunkcorian_popstar=self.webpackChunkcorian_popstar||[]).push([[883],{3597:function(e,t,a){"use strict";a.r(t),a.d(t,{default:function(){return r}});var n=a(7294),c=(a(5444),a(951));function r(){return n.createElement("div",null,n.createElement(c.Z,{subtitle:"404 Not Found."}),n.createElement("div",{className:"a"},n.createElement("div",{className:"b"},n.createElement("h1",{className:"d"},"404 Not Found."),n.createElement("p",{className:"e"},"お探しのページがありません。"))))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-843650bff4d68789601b.js.map
