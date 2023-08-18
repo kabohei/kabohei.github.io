@@ -6,16 +6,16 @@
 			position: relative;
 			z-index: 0;
 			width: 100vw;
-			height: 100vh;
+			height: 720px;
 		}
 		.d3 canvas {
-			-webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%);
-			mask-image: linear-gradient(to top, transparent 0%, black 15%);
+			-webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%);
+			mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%);
 		}
 		.d3-wrapper{
 			position: relative;
 			width: 100vw;
-			height: 100vh;
+			height: 720px;
 		}
 		.d3__content{
 			position: absolute;
@@ -61,7 +61,6 @@
 			top: 0;
 			bottom:100%;
 			left:0;
-			transform: translateY(-380px);
 		}
 
 		.dummy{
@@ -71,13 +70,16 @@
 		main{
 			overflow: hidden;
 			margin-top: calc(var(--navbar-top-pc) + var(--navbar-height-pc));
-		}</style><script>let fixedPosition = 200;//fixedPosition
+		}</style><script>let fixedPosition = 500;
 		window.addEventListener('scroll', function() {
-			let element = document.getElementById('d3');
-			let tgtY = element.clientHeight - fixedPosition
-			if (window.pageYOffset >= tgtY) {
-				element.classList.add('fixed');
+			let d3 = document.getElementById('d3');
+			let wrapper = document.getElementsByClassName('d3-wrapper')[0];
+			let tgtY = wrapper.getBoundingClientRect().top;
+			if (tgtY + fixedPosition < -1) {
+				d3.classList.add('fixed');
+				d3.style.transform = `translate(0, ${-fixedPosition}px)`;
 			}else {
-				element.classList.remove('fixed');
+				d3.classList.remove('fixed');
+				d3.style.transform = ``;
 			}
-		});</script><link rel="icon" href="/favicon.png"><script defer="defer" src="/v4/three-js-webpack-boilerplate-1.0.5cd66124e21f48228a34.bundle.js"></script></head><body><main><section id="main-visual"><div class="main-visual"><div class="d3-wrapper"><div class="d3__content"><h1 class="d3__content__t1">バルテスはサイバー攻撃の脅威から、<br/>企業を守るスペシャリストです。</h1><h2 class="d3__content__t2">VALTES security Service</h2><h3 class="d3__content__t3">バルテスの考えるセキュリティの品質向上とは、脅威を可視化しリスクをコントロールすることです。<br/>これにより、企業は安心して事業の成長に専念することができます。</h3></div><div id="d3" class="d3"></div></div></div></section><section class="dummy">DUMMY</section></main></body></html>
+		});</script><link rel="icon" href="/favicon.png"><script defer="defer" src="/v4/three-js-webpack-boilerplate-1.0.f2039e6194745b4eac94.bundle.js"></script></head><body><main><section id="main-visual"><div class="main-visual"><div class="d3-wrapper"><div class="d3__content"><h1 class="d3__content__t1">バルテスはサイバー攻撃の脅威から、<br/>企業を守るスペシャリストです。</h1><h2 class="d3__content__t2">VALTES security Service</h2><h3 class="d3__content__t3">バルテスの考えるセキュリティの品質向上とは、脅威を可視化しリスクをコントロールすることです。<br/>これにより、企業は安心して事業の成長に専念することができます。</h3></div><div id="d3" class="d3"></div></div></div></section><section class="dummy">DUMMY</section></main></body></html>
