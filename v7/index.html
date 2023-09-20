@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Three.js Webpack Boilerplate</title><style>:root{
+			--navbar-top-pc: 120px;
+			--navbar-height-pc: 80px;
+		}
+		.d3 {
+			position: relative;
+			z-index: 0;
+			width: 100vw;
+			height: 720px;
+		}
+		.d3 canvas {
+			-webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%);
+			mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%);
+		}
+		.d3-wrapper{
+			position: relative;
+			width: 100vw;
+			height: 720px;
+		}
+		.d3__content{
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+		}
+		.d3__content__t1{
+			font-size: 42px;
+			text-align: left;
+			position: absolute;
+			top: 0;
+			left: 50px;
+			line-height: 1.6;
+			font-weight: normal;
+		}
+		.d3__content__t2{
+			font-size: 62px;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			margin: 0 auto;
+			width: 100%;
+			text-transform: uppercase;
+			line-height: 1.0;
+			color: #3B846A;
+		}
+		.d3__content__t3{
+			font-size: 18px;
+			text-align: left;
+			position: absolute;
+			bottom: 0;
+			right: 35px;
+			max-width: 561px;
+			line-height: 2.0;
+			font-weight: normal;
+		}
+		.fixed{
+			position: fixed !important;
+			top: 0;
+			bottom:100%;
+			left:0;
+		}
+
+		.dummy{
+			font-size: 900px;
+			writing-mode: vertical-lr;
+		}
+		main{
+			overflow: hidden;
+			margin-top: calc(var(--navbar-top-pc) + var(--navbar-height-pc));
+		}</style><script>let fixedPosition = 500;
+		window.addEventListener('scroll', function() {
+			let d3 = document.getElementById('d3');
+			let wrapper = document.getElementsByClassName('d3-wrapper')[0];
+			let tgtY = wrapper.getBoundingClientRect().top;
+			if (tgtY + fixedPosition < -1) {
+				d3.classList.add('fixed');
+				d3.style.transform = `translate(0, ${-fixedPosition}px)`;
+			}else {
+				d3.classList.remove('fixed');
+				d3.style.transform = ``;
+			}
+		});</script><link rel="icon" href="/favicon.png"><script defer="defer" src="/v7/three-js-webpack-boilerplate-1.0.4951aeaac8fd139a901e.bundle.js"></script></head><body><main><section id="main-visual"><div class="main-visual"><div class="d3-wrapper"><div class="d3__content"><h1 class="d3__content__t1">バルテスはサイバー攻撃の脅威から、<br/>企業を守るスペシャリストです。</h1><h2 class="d3__content__t2">VALTES security Service</h2><h3 class="d3__content__t3">バルテスの考えるセキュリティの品質向上とは、脅威を可視化しリスクをコントロールすることです。<br/>これにより、企業は安心して事業の成長に専念することができます。</h3></div><div id="d3" class="d3"></div></div></div></section><section class="dummy">DUMMY</section></main></body></html>
